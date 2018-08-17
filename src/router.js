@@ -7,7 +7,7 @@ import ListOfFavoriteGames from "./components/ListOfFavoriteGames/ListOfFavorite
 export default (
   <Switch>
     <Route exact path="/" component={ListOfGames} />
-    <Route path="/game/:name" component={EachGame} />
+    <Route path="/game/:id" component={EachGame} />
     <Route path="/listoffavorites" component={ListOfFavoriteGames} />
   </Switch>
 );
