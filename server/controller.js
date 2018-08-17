@@ -1,9 +1,13 @@
-const axios = require('axios');
+const axios = require("axios");
 
 const getGames = async (req, res) => {
-  let games = await axios.get(`https://www.giantbomb.com/api/games/?api_key=${process.env.API_KEY}&format=json`);
-  res.send(games);
-}
+  let games = await axios.get(
+    `https://www.giantbomb.com/api/games/?api_key=${
+      process.env.API_KEY
+    }&format=json`
+  );
+  res.send(games.data.results);
+};
 
 const getGameById = async (req, res) => {
   let {game_id} = req.params;
