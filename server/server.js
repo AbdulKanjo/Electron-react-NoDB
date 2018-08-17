@@ -1,6 +1,7 @@
 const express = require('express');
 const {json} = require('body-parser');
 const massive = require('massive');
+const cors = require('cors');
 const controller = require('./controller.js');
 require('dotenv').config();
 
@@ -14,6 +15,7 @@ massive(process.env.CONNECTION_STRING)
   .catch(err => console.log(err));
 
 app.use(json());
+app.use(cors());
 
 app.get('/api/games', controller.getGames);
 app.get('/api/games/:game_id', controller.getGameById);
