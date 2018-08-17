@@ -16,6 +16,7 @@ massive(process.env.CONNECTION_STRING)
 app.use(json());
 
 app.get('/api/games', controller.getGames);
+app.get('/api/games/:game_id', controller.getGameById);
 
 app.listen(port, () => {
   console.log(`Listening on port: ${port}`);
